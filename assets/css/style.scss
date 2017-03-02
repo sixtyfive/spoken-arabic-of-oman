@@ -1,0 +1,19 @@
+---
+sitemap:
+  exclude: yes
+---
+
+@import "{{ site.theme }}";
+
+a:hover {
+  color: #f00 !important;
+}
+
+header ul {
+  background: none;
+  border: none;
+}
+
+header li {
+  border: none;
+}
