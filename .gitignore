@@ -19,7 +19,6 @@ _site
 *.ini
 audios/*/*_data
 audios/*/*.aup
-output/*
 docs/*
 software/*
 videos/*

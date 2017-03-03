@@ -1,0 +1,16 @@
+#!/usr/bin/env ruby
+
+require 'pathname'
+here = Pathname.new(__FILE__).dirname
+
+Dir.glob(here.parent+'transcripts'+'text??.html').each do |infile|
+  outfile = here.parent+'output'+(Pathname.new(infile).split.last.to_s.gsub('html', 'txt'))
+  text = ''
+  File.open(infile, 'r') do |_infile|
+    while line = _infile.gets
+      l = line.gsub(/[^\p{Arabic} ]/, '').strip.squeeze(' ')
+      text += l+".\n" unless l.empty? || l.match(/^.$/)
+    end
+  end
+  File.write(outfile, text)
+end
