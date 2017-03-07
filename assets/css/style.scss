@@ -18,6 +18,18 @@ header li {
   border: none;
 }
 
+table .left {
+  text-align: left;
+}
+
+table .right {
+  text-align: right;
+}
+
+table td {
+  vertical-align: top;
+}
+
 table#glossary tr td:first-child {
   direction: rtl;
 }
