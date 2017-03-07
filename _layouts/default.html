@@ -27,12 +27,12 @@
       </section>
       <footer>
         {% if site.github.is_project_page %}
-        <p>Maintained by <a href="{{ site.github.owner_url }}">J. R. Schmid</a></p>
+        Maintained by <a href="{{ site.github.owner_url }}">J. R. Schmid</a><br/>
         {% endif %}
         {% if site.github.is_project_page %}
-          <p class="view"><a href="{{ site.github.repository_url }}">View GitHub project <small>{{ github_name }}</small></a></p>
+          <a href="{{ site.github.repository_url }}">View GitHub project <small>{{ github_name }}</small></a>
         {% endif %}
-
+<!--
         {% if site.github.is_user_page %}
           <p class="view"><a href="{{ site.github.owner_url }}">View My GitHub Profile</a></p>
         {% endif %}
@@ -45,6 +45,7 @@
           </ul>
         {% endif %}
         <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+-->
       </footer>
     </div>
     <script src="{{ '/assets/js/scale.fix.js' | relative_url }}"></script>
