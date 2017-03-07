@@ -17,3 +17,7 @@ header ul {
 header li {
   border: none;
 }
+
+table#glossary tr td:first-child {
+  direction: rtl;
+}
