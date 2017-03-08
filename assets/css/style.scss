@@ -30,6 +30,10 @@ table td {
   vertical-align: top;
 }
 
+table.ta1 tr:last-child td, td.ce3 {
+  border-bottom: none;
+}
+
 table#glossary tr td:first-child {
   direction: rtl;
 }
