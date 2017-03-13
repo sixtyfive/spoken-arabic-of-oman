@@ -28,3 +28,6 @@ test
 archive
 .RData
 .Rhistory
+table_with_frequencies.txt
+stylo_config.txt
+wordlist.txt
