@@ -26,3 +26,5 @@ thesis-blx.bib
 *synctex*
 test
 archive
+.RData
+.Rhistory
