@@ -25,5 +25,5 @@ mallet.top.words(topic_model, topic_words[5,])
 top_words = mallet.top.words(topic_model, topic_words[5,])
 
 png('mallet_output/wordcloud.png', width=1000, height=1000, unit='px')
-wordcloud(top_words$words, top_words$weights, c(4,.8), rot.per=0, random.order=F)
+wordcloud(top_words$words, top_words$weights, c(20,1), rot.per=0, random.order=F)
 dev.off()
