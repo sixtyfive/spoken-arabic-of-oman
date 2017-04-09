@@ -1,7 +1,9 @@
 #!/usr/bin/env ruby
 
-require 'sorting/convenience';     require_relative 'monkey_patches'
-require_relative 'create_diagram'; require_relative 'regex_replacement_table'
+require 'sorting/convenience'
+%w{monkey_patches create_diagram regex_replacement_table}.each |file|
+  require_relative file
+end
 
 unless ARGV.count > 1
   puts "Usage: ./count_words.rb <corpus file> <word frequency file> [<replacement tables>, ...]"
