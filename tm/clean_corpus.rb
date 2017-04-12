@@ -11,7 +11,7 @@ corpus_files = Dir.glob(corpus_dir+'OA*txt')
 
 corpus_files.each do |corpus_file|
   file_contents = IO.read(corpus_file)
-  file_contents.gsub!(/.: /, '') # speaker designations ("x: ") need to be removed first
+  file_contents.gsub!(/^.: /, '') # speaker designations ("x: ") need to be removed first
   @regex_replacements.each {|search,replace| file_contents.gsub!(search, replace)}
   replacement_tables.each do |replacement_table|
     File.open(replacement_table, 'r') do |manual_tokenisation_file|

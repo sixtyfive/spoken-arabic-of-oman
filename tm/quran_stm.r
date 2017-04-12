@@ -6,11 +6,12 @@ library(stringr)
 
 # read the corpus from the text files it resides in and also store those files' names
 corpus.dir = '../corpus/quran'
+output.dir = 'quran'
 corpus.raw = read.csv(paste0(corpus.dir, '/', 'medinan-and-meccan-suras-only.csv'))
 processed = textProcessor(corpus.raw$documents, corpus.raw)
 
 # not really relevant for such a small corpus, but good to keep around not to forget about
-png('quran/removal_scenarios.png', width=1000, height=1000, unit='px')
+png(paste0(output.dir, '/removal_scenarios.png'), width=1000, height=1000, unit='px')
 plotRemoved(processed$documents, lower.thresh = seq(1, 10, by=1))
 dev.off()
 
@@ -26,12 +27,12 @@ fit = stm(documents=out$documents, vocab=out$vocab, K = num_topics,
           prevalence =~ type+s(chrono), content =~ type,
           max.em.its = 75, data=out$meta, init.type='Spectral')
 
-png('quran/topic_summary.png', width=1000, height=1000, unit='px')
+png(paste0(output.dir, '/topic_summary.png'), width=1000, height=1000, unit='px')
 plot(fit)
 dev.off()
 
 lapply(1:num_topics, function(topic) {
-  png(paste0('quran/contrast', str_pad(topic, 2, pad='0'), '.png'), width=1000, height=1000, unit='px')
+  png(paste0(output.dir, '/contrast', str_pad(topic, 2, pad='0'), '.png'), width=1000, height=1000, unit='px')
   plot(fit, type='perspectives', topics=topic)
   dev.off()
 })
