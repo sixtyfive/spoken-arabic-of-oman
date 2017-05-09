@@ -12,9 +12,9 @@ stop_words = str_split(read_file('stoplist.txt'), '\n')[[1]]
 processed = textProcessor(corpus.raw$documents, corpus.raw, customstopwords=stop_words)
 threshold=2 # don't throw away too many terms as we don't have enough text anyways
 num_topics = 6 # max number of topics that can be determined
-plot_size = 500 # width and height
+plot_size = 2000 # width and height
 
-out = prepDocuments(processed$documents, processed$vocab, processed$meta, lower.thresh=threshold) 
+out = prepDocuments(processed$documents, processed$vocab, processed$meta, lower.thresh=threshold)
 
 # not really relevant for such a small corpus, but good to keep around not to forget about
 png(paste0(output.dir, '/removal_scenarios.png'), width=plot_size, height=plot_size, unit='px')
